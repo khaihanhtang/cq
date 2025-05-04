@@ -1,4 +1,4 @@
-use ark_ec::PairingEngine;
+use ark_ec::pairing::Pairing;
 use ark_ff::{FftField, ToBytes};
 use ark_poly::{
     univariate::DensePolynomial, EvaluationDomain, GeneralEvaluationDomain, UVPolynomial,

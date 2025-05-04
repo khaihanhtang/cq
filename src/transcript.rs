@@ -1,4 +1,4 @@
-use ark_ec::PairingEngine;
+use ark_ec::pairing::Pairing;
 use ark_ff::{to_bytes, Field, ToBytes};
 
 use crate::{
@@ -22,7 +22,7 @@ impl<FS: FiatShamirRng> TranscriptOracle<FS> {
         F::rand(&mut self.fs_rng)
     }
 
-    pub fn stream_public_input<E: PairingEngine>(
+    pub fn stream_public_input<E: Pairing>(
         &mut self,
         common: &CommonPreprocessedInput<E>,
         statement: &Statement<E>,
